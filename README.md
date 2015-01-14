@@ -28,12 +28,13 @@ It also provides a time logging feature to provide a history of how long you wor
 - Download the latest release https://github.com/dmaccormac/treelaunch/releases
 - Unpack setup files and run setup.exe.
 
-TreeLaunch can uninstalled using 'Programs and Features' in Control Panel.
+TreeLaunch can be uninstalled using 'Programs and Features' in Control Panel.
 
 # Usage
 To start TreeLaunch, navigate to the TreeLaunch entry in your Start Menu.
 
-By default, the *SampleTree.xml* file will be loaded on initial program start-up. You may edit this file as needed or create a new file elsewhere in the system.
+The default tree file *SampleTree.xml* will be loaded when TreeLaunch starts for the first time.
+You may edit this file as needed or create a new file elsewhere in the system.
 
 TreeLaunch has the following menu options which can be seen by right-clicking on the Tree.
 
@@ -55,12 +56,12 @@ Below is a simple example of the XML format used by TreeLaunch.
 
 	<Tree>
 		<Group Name="My First Group">
-			<Item Name="notepad.exe" />
-			<Item Name="calc.exe" />
+			<Item Name="Notepad" Command="notepad.exe" />
+			<Item Name="Calculator" Command="calc.exe" />
 		</Group>
 	</Tree>
 	
-You can create as many groups as needed using the example shown above. "Name" is the only attribute of required by the Group tag.
+You can create as many items and groups as needed using the example shown above. "Name" is the only attribute required by the Group tag.
 
 The 'Item' tag has four attributes as follows:
 
