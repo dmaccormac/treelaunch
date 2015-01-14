@@ -1,0 +1,36 @@
+<Tree Name="MyTree">
+  <Group Name="Desktop Support" Icon="folder.png">
+    <Item Name="Bob TeamViewer" Command="C:\Program Files\TeamViewer\Version8\teamviewer.exe" Parameters="-i 18876347 --Password test -m fileTransfer" Icon="computer.png" />
+    <Item Name="Alice-Laptop RDP" Command="mstsc.exe" Parameters="/V:alicelaptop.noip.com"  Icon="computer.png"/>
+    <Item Name="Hal-PC ChunkVNC" Command="C:\vncviewer.exe" Parameters="/proxy support.example.com:5901 /autoreconnect /connect ID:5551001 /dsmplugin SecureVNCPlugin.dsm /password myPassword"  Icon="computer.png"/>
+    <Item Name="Jane-iMac SSH" Command="C:\putty.exe" Parameters="-l jane-imac" Icon="computer.png" />
+    <Item Name="Mike-PC RDP" Command="mstsc.exe" Parameters="/V:mike123.dyndns.org"  Icon="computer.png"/>
+  </Group>
+  
+  
+  <Group Name="Server Support" Icon="folder.png">
+    <Item Name="Contoso FS1"  Command="mstsc.exe" Parameters="/V:fs1.corp.contoso.com"  Icon="computer.png"/>
+    <Item Name="Contoso Tux1" Command="C:\putty.exe" Parameters="-l contoso-tux1" Icon="computer.png" />
+    <Item Name="Westsim DC1"  Command="mstsc.exe" Parameters="/V:server.westsim.com"  Icon="computer.png"/>
+    <Item Name="WestSim VPN" Command="rasdial.exe" Parameters="Westsim-CA"  Icon="computer.png"/>   
+  </Group>
+
+  <Group Name="Toolbox" Icon="folder.png">
+    <Item Name="C: Drive" Command="explorer.exe" Parameters="C:\" Icon="tool.png"/>
+    <Item Name="Control Panel" Command="control"   Icon="tool.png"/>
+    <Item Name="Lock Workstation" Command="rundll32.exe" Parameters="user32.dll, LockWorkStation" Icon="tool.png"/>
+    <Item Name="Net Connections" Command="control" Parameters="ncpa.cpl" Icon="tool.png"/>
+    <Item Name="Printers" Command="control" Parameters="printers" Icon="tool.png"/>
+    <Item Name="Programs/Features" Command="control" Parameters="appwiz.cpl" Icon="tool.png"/>
+    <Item Name="Task Manager" Command="taskmgr.exe" Icon="tool.png"/> 
+  </Group>
+
+  <Group Name="Bookmarks" Icon="folder.png">
+    <Item Name="TreeLaunch" Command="iexplore.exe" Parameters="http://go.danmac.co/treelaunch" Icon="website.png"/>
+    <Item Name="Gmail" Command="iexplore.exe" Parameters="http://www.gmail.com" Icon="website.png"/>
+    <Item Name="MSDN" Command="iexplore.exe" Parameters="http://msdn.microsoft.com" Icon="website.png"/>
+    <Item Name="MajorGeeks.com" Command="iexplore.exe" Parameters="http://www.majorgeeks.com" Icon="website.png"/>
+    <Item Name="StackOverflow.com" Command="iexplore.exe" Parameters="http://www.stackoverflow.com" Icon="website.png"/>
+  </Group>
+
+</Tree>

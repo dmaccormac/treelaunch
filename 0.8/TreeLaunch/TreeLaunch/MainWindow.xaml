@@ -1,0 +1,35 @@
+﻿<Window x:Class="TreeLaunch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:TreeLaunch.Properties" 
+        Title="TreeLaunch" Height="400" Width="200" WindowStyle="ToolWindow">
+    <Grid>
+        <TreeView Name="treeview" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding XPath=Group}" Margin="10,10,10,25" MouseDoubleClick="treeview_MouseDoubleClick"  >
+
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="MenuLaunch" Header="Launch" Click="MenuLaunch_Click"/>
+                    <MenuItem Name="MenuOpen" Header="Open XML File" Click="MenuOpen_Click"/>
+                    <MenuItem Name="MenuEdit" Header="Edit XML" Click="MenuEdit_Click"/>
+                    <MenuItem Name="MenuRefresh" Header="Refresh" Click="MenuRefresh_Click"/>
+                    <MenuItem Name="MenuLog" Header="View Log" Click="MenuLog_Click"/>
+                    <MenuItem Name="MenuTopmost" Header="Always on Top" IsCheckable="True" IsChecked="False" Click="MenuTopmost_Click" />
+                    <MenuItem Name="MenuAbout" Header="About" Click="MenuAbout_Click"/>
+                </ContextMenu>
+
+
+            </TreeView.ContextMenu>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding XPath=Item}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="16" Height="16" Margin="3,0" Source="{Binding XPath=@Icon}" />
+                        <TextBlock Text="{Binding XPath=@Name}" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <StatusBar VerticalAlignment="Bottom" Margin="10,1,10,1" Height="20" Background="White">
+            <TextBlock x:Name="TextBlock_Status" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Source={x:Static p:Settings.Default}, Path=TreeFile, Mode=TwoWay}" FontSize="11"/>
+        </StatusBar>
+    </Grid>
+</Window>
