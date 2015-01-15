@@ -19,9 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Overview
 TreeLaunch is a launcher application for Windows. It allows you to manage items using groups which are then displayed in a Windows Explorer style tree.
-It is designed to be lightweight, flexible and extensible. You can launch any program that can be started from the command line or Windows Run box.
+It is designed to be lightweight, flexible and portable. You can launch any program that can be started from the command line or Windows Run box.
 
-It also provides a time logging feature to provide a history of how long you work with each item in the tree.
+It also provides a time logging feature which keeps a history of how long you work with each item in the tree.
 
 
 # Installation
@@ -38,21 +38,35 @@ You may edit this file as needed or create a new file elsewhere in the system.
 
 TreeLaunch has the following menu options which can be seen by right-clicking on the Tree.
 
-	- Launch
-	- Open XML
-	- Edit
-	- Refresh
-	- View Log
-	- Always on Top
-	- About
+## Launch
+Start the selected Item. You can also launch an item by double-click on it.
 
+## Open XML
+Choose an XML tree file to open. This setting will be saved by TreeLaunch for the next time you open the program.
+ 
+## Edit
+Open the current XML tree file in the default editor (Window Notepad).
+
+## Refresh
+Refresh the current tree if you have made any changes to the XML tree file. The tree should automatically refresh itself in most cases.
+
+## View Log
+View the TreeLaunch.log file. Each time an item is started or closed it is recorded in the log file along with a timestamp. 
+
+## Always on Top
+Select the *Always on Top* option to keep the TreeLaunch window above all other windows.
+
+## About
+Display the *About* message.
 
 # Configuration
 
 ## XML Tree File
-TreeLaunch comes with a sample XML file called SampleTree.xml which is loaded by default when the program starts.
+TreeLaunch uses an XML document to store entries in the Tree. 
 
-Below is a simple example of the XML format used by TreeLaunch.
+*SampleTree.xml* which comes pre-loaded with TreeLaunch shows several useful examples including remote connections such as Microsoft Remote Desktop, SSH and VPN.
+
+Below is a small example of the XML format used by TreeLaunch. 
 
 	<Tree>
 		<Group Name="My First Group">
@@ -61,7 +75,25 @@ Below is a simple example of the XML format used by TreeLaunch.
 		</Group>
 	</Tree>
 	
-You can create as many items and groups as needed using the example shown above. "Name" is the only attribute required by the Group tag.
+You can create as many items and groups as needed using the example shown above or by using *SampleTree.xml* as a starting template. 
+
+## XML Tags
+TreeLaunch uses three XML tags to store tree information: *<Tree>*, *<Group>* and *<Item>*.
+Further explanation of the XML tags and attributes is given below. Refer to the XML example above if necessary.
+
+### <Tree> Tag
+The entire tree must be enclosed in *<Tree>* tags. No additional attributes required.
+
+### <Group> Tag
+Used to group several *<Item>* tags together. It can be named using the required *Name* XML attribute and an optional icon can be displayed using the *Icon* attribute.
+
+	Attribute	Required? 	Info
+	---------	---------	------
+	Name		Required 	Shown in Tree as Item Name.
+	Icon		Optional	Path to PNG icon file to be used for the item.
+
+### <Item> Tag
+The *<Item>* tag is used to create items which are essentially commands to be executed, usually along with additional customized parameters, and an optional Icon.
 
 The 'Item' tag has four attributes as follows:
 
@@ -72,7 +104,14 @@ The 'Item' tag has four attributes as follows:
 	Parameters	Optional	Additional parameters to pass to command.
 	Icon		Optional	Path to PNG icon file to be used for the item.
 
+## Icons
+Custom icons can be added to *Group* and *Item* objects in the Tree. TreeLaunch comes with four default icons included in the program installation folder:
 
+	- folder.png
+	- computer.png
+	- tool.png
+	- website.png
 
+These PNG icons are size 16 x 16. You can add your own icons as needed using the *<Icon>* tag and the path to your own custom icons. 
 
 # Notes
