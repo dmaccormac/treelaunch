@@ -39,13 +39,13 @@ You may edit this file as needed or create a new file elsewhere in the system.
 TreeLaunch has the following menu options which can be seen by right-clicking on the Tree.
 
 ## Launch
-Start the selected Item. You can also launch an item by double-click on it.
+Start the selected Item. You can also launch an item by double-clicking on it.
 
 ## Open XML
 Choose an XML tree file to open. This setting will be saved by TreeLaunch for the next time you open the program.
  
 ## Edit
-Open the current XML tree file in the default editor (Window Notepad).
+Open the current XML tree file in the default editor (Windows Notepad).
 
 ## Refresh
 Refresh the current tree if you have made any changes to the XML tree file. The tree should automatically refresh itself in most cases.
@@ -79,13 +79,13 @@ You can create as many items and groups as needed using the example shown above 
 
 ## XML Tags
 TreeLaunch uses three XML tags to store tree information: *\<Tree\>*, *\<Group\>* and *\<Item\>*.
-Further explanation of the XML tags and attributes is given below. Refer to the XML example above if necessary.
+Further explanation of the XML tags and attributes is given below. Refer to the XML Tree File example above if necessary.
 
 ### \<Tree\> Tag
-The entire tree must be enclosed in *\<Tree\>* tags. No additional attributes required.
+The entire tree must be enclosed in *Tree* tags. No additional attributes required.
 
 ### \<Group\> Tag
-Used to group several *\<Item\>* tags together. It can be named using the required *Name* XML attribute and an optional icon can be displayed using the *Icon* attribute.
+Used to group several *Item* tags together. It can be named using the required *Name* attribute and an optional icon can be displayed using the *Icon* attribute.
 
 	Attribute	Required? 	Info
 	---------	---------	------
@@ -93,7 +93,7 @@ Used to group several *\<Item\>* tags together. It can be named using the requir
 	Icon		Optional	Path to PNG icon file to be used for the item.
 
 ### \<Item\> Tag
-The *\<Item\>* tag is used to create items which are essentially commands to be executed, usually along with additional customized parameters, and an optional Icon.
+The *Item* tag is used to create items which are essentially commands to be executed, usually along with additional customized parameters, and an optional Icon.
 
 The 'Item' tag has four attributes as follows:
 
