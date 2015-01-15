@@ -78,14 +78,14 @@ Below is a small example of the XML format used by TreeLaunch.
 You can create as many items and groups as needed using the example shown above or by using *SampleTree.xml* as a starting template. 
 
 ## XML Tags
-TreeLaunch uses three XML tags to store tree information: *<Tree>*, *<Group>* and *<Item>*.
+TreeLaunch uses three XML tags to store tree information: *\<Tree\>*, *\<Group\>* and *\<Item\>*.
 Further explanation of the XML tags and attributes is given below. Refer to the XML example above if necessary.
 
 ### \<Tree\> Tag
-The entire tree must be enclosed in *<Tree>* tags. No additional attributes required.
+The entire tree must be enclosed in *\<Tree\>* tags. No additional attributes required.
 
 ### \<Group\> Tag
-Used to group several *<Item>* tags together. It can be named using the required *Name* XML attribute and an optional icon can be displayed using the *Icon* attribute.
+Used to group several *\<Item\>* tags together. It can be named using the required *Name* XML attribute and an optional icon can be displayed using the *Icon* attribute.
 
 	Attribute	Required? 	Info
 	---------	---------	------
@@ -93,7 +93,7 @@ Used to group several *<Item>* tags together. It can be named using the required
 	Icon		Optional	Path to PNG icon file to be used for the item.
 
 ### \<Item\> Tag
-The *<Item>* tag is used to create items which are essentially commands to be executed, usually along with additional customized parameters, and an optional Icon.
+The *\<Item\>* tag is used to create items which are essentially commands to be executed, usually along with additional customized parameters, and an optional Icon.
 
 The 'Item' tag has four attributes as follows:
 
